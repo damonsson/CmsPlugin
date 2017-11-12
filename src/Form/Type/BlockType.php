@@ -16,6 +16,7 @@ use BitBag\CmsPlugin\Entity\BlockInterface;
 use BitBag\CmsPlugin\Form\Type\Translation\HtmlBlockTranslationType;
 use BitBag\CmsPlugin\Form\Type\Translation\ImageBlockTranslationType;
 use BitBag\CmsPlugin\Form\Type\Translation\TextBlockTranslationType;
+use BitBag\CmsPlugin\Form\Type\Translation\VideoBlockTranslationType;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductAutocompleteChoiceType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Sylius\Bundle\ResourceBundle\Form\Type\ResourceTranslationsType;
@@ -96,6 +97,19 @@ final class BlockType extends AbstractResourceType
                 'label' => 'bitbag.ui.images',
                 'entry_type' => ImageBlockTranslationType::class,
                 'validation_groups' => null === $block->getId() ? ['bitbag_image'] : [],
+                'constraints' => [
+                    new Valid(),
+                ],
+            ]);
+
+            return;
+        }
+//        @TODO: IF IF IF IF IF IF IF IF IF
+        if (BlockInterface::VIDEO_BLOCK_TYPE === $block->getType()) {
+            $builder->add('translations', ResourceTranslationsType::class, [
+                'label' => 'bitbag.ui.videos',
+                'entry_type' => VideoBlockTranslationType::class,
+                'validation_groups' => null === $block->getId() ? ['bitbag_video'] : [],
                 'constraints' => [
                     new Valid(),
                 ],

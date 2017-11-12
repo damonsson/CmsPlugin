@@ -28,10 +28,25 @@ services:
         tags:
             - { name: form.type }
 
+    bitbag.form.type.translation.video_block:
+        class: BitBag\CmsPlugin\Form\Type\Translation\VideoBlockTranslationType
+        arguments:
+            - "%bitbag.model.block_translation.class%"
+        tags:
+            - { name: form.type }
+
     bitbag.form.type.block_image:
         class: BitBag\CmsPlugin\Form\Type\BlockImageType
         arguments:
             - BitBag\CmsPlugin\Entity\BlockImage
+            - ['bitbag']
+        tags:
+            - { name: form.type }
+
+    bitbag.form.type.block_video:
+        class: BitBag\CmsPlugin\Form\Type\BlockVideoType
+        arguments:
+            - BitBag\CmsPlugin\Entity\BlockVideo
             - ['bitbag']
         tags:
             - { name: form.type }

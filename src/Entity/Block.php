@@ -139,6 +139,22 @@ class Block implements BlockInterface
     {
         $this->getBlockTranslation()->setImage($image);
     }
+//@TODO: video interface
+    /**
+     * {@inheritdoc}
+     */
+    public function getVideo(): ?ImageInterface
+    {
+        return $this->getBlockTranslation()->getImage();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setVideo(?ImageInterface $video): void
+    {
+        $this->getBlockTranslation()->setImage($video);
+    }
 
     /**
      * {@inheritdoc}

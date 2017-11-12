@@ -3,6 +3,9 @@ bitbag:
         image:
             mime_types: Only PNG and JPEG files are allowed.
             not_blank: Image cannot be blank.
+        video:
+            mime_types: Only MP4 files are allowed.
+            not_blank: Video cannot be blank.
         code:
             unique: There is an existing block with this code.
             not_blank: Code cannot be blank.

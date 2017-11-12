@@ -1,5 +1,6 @@
 {% set path = '/media/image/'~block.image.path %}
 
+{#@TODO: if block.name == null show block.name ? #}
 {% if null == block.name and null == block.link %}
     <img src="{{ path }}" alt="{{ block.name }}"/>
 {% elseif null == block.name and null != block.link %}

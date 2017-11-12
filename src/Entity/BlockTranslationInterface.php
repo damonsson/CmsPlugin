@@ -50,6 +50,16 @@ interface BlockTranslationInterface extends ResourceInterface, TranslationInterf
      * @param ImageInterface $image
      */
     public function setImage(?ImageInterface $image): void;
+//    @TODO: create video interface
+    /**
+     * @return ImageInterface|null
+     */
+    public function getVideo(): ?ImageInterface;
+
+    /**
+     * @param ImageInterface $video
+     */
+    public function setVideo(?ImageInterface $video): void;
 
     /**
      * @return null|string

@@ -31,6 +31,7 @@ interface BlockInterface extends
     const TEXT_BLOCK_TYPE = 'text';
     const IMAGE_BLOCK_TYPE = 'image';
     const HTML_BLOCK_TYPE = 'html';
+    const VIDEO_BLOCK_TYPE = 'video';
 
     /**
      * @return string
@@ -81,6 +82,16 @@ interface BlockInterface extends
      * @param null|ImageInterface $image
      */
     public function setImage(?ImageInterface $image): void;
+
+    /**
+     * @return null|ImageInterface
+     */
+    public function getVideo(): ?ImageInterface;
+
+    /**
+     * @param null|ImageInterface $video
+     */
+    public function setVideo(?ImageInterface $video): void;
 
     /**
      * @return null|string

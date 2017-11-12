@@ -135,6 +135,12 @@ final class BlockContext implements Context
             return;
         }
 
+        if (BlockInterface::VIDEO_BLOCK_TYPE === $blockType) {
+            $this->createPage->open(['type' => BlockInterface::VIDEO_BLOCK_TYPE]);
+
+            return;
+        }
+
         throw new TemplateTypeNotFound($blockType);
     }
 

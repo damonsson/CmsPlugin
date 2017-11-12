@@ -25,3 +25,10 @@ BitBag\CmsPlugin\Entity\BlockTranslation:
             joinColumn:
                 name: image_id
                 referencedColumnName: id
+        video:
+            targetEntity: BitBag\CmsPlugin\Entity\BlockVideo
+            mappedBy: owner
+            cascade: [ALL]
+            joinColumn:
+                name: video_id
+                referencedColumnName: id

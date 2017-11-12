@@ -1,0 +1,11 @@
+BitBag\CmsPlugin\Entity\BlockVideo:
+    type: entity
+    table: bitbag_block_video
+    oneToOne:
+        owner:
+            targetEntity: BitBag\CmsPlugin\Entity\BlockTranslation
+            inversedBy: video
+            cascade: [ALL]
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id

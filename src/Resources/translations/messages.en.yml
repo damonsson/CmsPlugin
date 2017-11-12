@@ -12,6 +12,7 @@ bitbag:
         text_block: Text block
         html_block: HTML block
         image_block: Image block
+        video_block: Video block
         pages_header: Pages
         pages_subheader: Manage your pages
         products: Products
@@ -27,6 +28,7 @@ bitbag:
         contents: Contents
         content: Content
         images: Images
+        videos: Videos
         link: Link
         faq_header: FAQ
         faq_subheader: Manage frequently asked questions

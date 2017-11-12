@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace BitBag\CmsPlugin\Twig\Extension;
 
+use BitBag\CmsPlugin\Entity\Block;
 use BitBag\CmsPlugin\Entity\BlockInterface;
 use BitBag\CmsPlugin\Exception\TemplateTypeNotFound;
 use BitBag\CmsPlugin\Repository\BlockRepositoryInterface;
@@ -26,6 +27,7 @@ final class RenderBlockExtension extends \Twig_Extension
     const TEXT_BLOCK_TEMPLATE = '@BitBagCmsPlugin/Shop/Block/textBlock.html.twig';
     const HTML_BLOCK_TEMPLATE = '@BitBagCmsPlugin/Shop/Block/htmlBlock.html.twig';
     const IMAGE_BLOCK_TEMPLATE = '@BitBagCmsPlugin/Shop/Block/imageBlock.html.twig';
+    const VIDEO_BLOCK_TEMPLATE = '@BitBagCmsPlugin/Shop/Block/videoBlock.html.twig';
 
     /**
      * @var BlockRepositoryInterface
@@ -38,6 +40,11 @@ final class RenderBlockExtension extends \Twig_Extension
     private $logger;
 
     /**
+     * @var array
+     */
+    private $existBlockTypes;
+
+    /**
      * @param BlockRepositoryInterface $blockRepository
      * @param LoggerInterface $logger
      */
@@ -48,6 +55,7 @@ final class RenderBlockExtension extends \Twig_Extension
     {
         $this->blockRepository = $blockRepository;
         $this->logger = $logger;
+        $this->existBlockTypes = $this->getExistBlockTypes();
     }
 
     /**
@@ -80,18 +88,27 @@ final class RenderBlockExtension extends \Twig_Extension
             return null;
         }
 
-        if (BlockInterface::TEXT_BLOCK_TYPE === $block->getType()) {
-            return $twigEnvironment->render(self::TEXT_BLOCK_TEMPLATE, ['block' => $block]);
-        }
-
-        if (BlockInterface::HTML_BLOCK_TYPE === $block->getType()) {
-            return $twigEnvironment->render(self::HTML_BLOCK_TEMPLATE, ['block' => $block]);
-        }
-
-        if (BlockInterface::IMAGE_BLOCK_TYPE === $block->getType()) {
-            return $twigEnvironment->render(self::IMAGE_BLOCK_TEMPLATE, ['block' => $block]);
+        foreach ($this->existBlockTypes as $existBlockType) {
+            if ($existBlockType === $block->getType()) {
+                $blockTemplate = strtoupper($block->getType()) . '_BLOCK_TEMPLATE';
+                return $twigEnvironment->render(constant('self::' . $blockTemplate), ['block' => $block]);
+            }
         }
 
         throw new TemplateTypeNotFound($block->getType());
+
+    }
+
+    private function getExistBlockTypes(): array
+    {
+        $reflector = new \ReflectionClass(Block::class);
+        $constants = $reflector->getConstants();
+        $values = [];
+
+        foreach ($constants as $constant => $value) {
+            $values[] = $value;
+        }
+
+        return $values;
     }
 }

@@ -1,0 +1,6 @@
+BitBag\CmsPlugin\Entity\BlockVideo:
+    properties:
+        file:
+            - NotBlank:
+                message: 'bitbag.block.video.not_blank'
+                groups: ['bitbag_video']

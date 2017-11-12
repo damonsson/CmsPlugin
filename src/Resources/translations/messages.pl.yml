@@ -12,6 +12,7 @@ bitbag:
         text_block: Blok tekstowy
         html_block: Blok HTML
         image_block: Blok zdjęciowy
+        video_block: Blok video
         pages_header: Strony
         pages_subheader: Zarządzaj swoimi stronami
         products: Produkty
@@ -27,6 +28,7 @@ bitbag:
         contents: Treści
         content: Treść
         images: Zdjęcia
+        videos: Filmy
         link: Link
         sections: Sekcje
         sections_header: Sekcje

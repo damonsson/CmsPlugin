@@ -59,7 +59,7 @@ final class CreatePage extends BaseCreatePage implements CreatePageInterface
      */
     public function uploadVideo(string $video): void
     {
-        $path = __DIR__ . '/../../../Resources/videos' . $video;
+        $path = __DIR__ . '/../../../Resources/videos/' . $video;
 
         Assert::fileExists($path);
 

@@ -11,8 +11,10 @@
                 </div>
                 <div class="ui content{% if 0 == loop.index0 %} active{% endif %}">
                     {% for field in translationForm %}
-
                         {% if 'image' == field.vars.name %}
+                            {{ image.imageWidget(field) }}
+                            {#@TODO: add video widget#}
+                        {% elseif 'video' == field.vars.name %}
                             {{ image.imageWidget(field) }}
                         {% else %}
                             {{ form_row(field) }}
