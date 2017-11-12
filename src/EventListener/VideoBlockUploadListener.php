@@ -14,6 +14,7 @@ namespace BitBag\CmsPlugin\EventListener;
 
 use BitBag\CmsPlugin\Entity\BlockInterface;
 use BitBag\CmsPlugin\Entity\BlockTranslationInterface;
+use BitBag\CmsPlugin\Uploader\VideoUploaderInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 
@@ -24,14 +25,14 @@ use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 final class VideoBlockUploadListener
 {
     /**
-     * @var ImageUploaderInterface
+     * @var VideoUploaderInterface
      */
     private $uploader;
 
     /**
-     * @param ImageUploaderInterface $uploader
+     * @param VideoUploaderInterface $uploader
      */
-    public function __construct(ImageUploaderInterface $uploader)
+    public function __construct(VideoUploaderInterface $uploader)
     {
         $this->uploader = $uploader;
     }

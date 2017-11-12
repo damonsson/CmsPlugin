@@ -20,7 +20,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 /**
  * @author Patryk Drapik <patryk.drapik@bitbag.pl>
  */
-//@TODO: Not extend image type
 final class BlockVideoType extends AbstractResourceType
 {
 

@@ -12,13 +12,9 @@ declare(strict_types=1);
 
 namespace BitBag\CmsPlugin\Entity;
 
-use Sylius\Component\Core\Model\Image as BaseImage;
-use Sylius\Component\Core\Model\ImageInterface;
-
 /**
  * @author Patryk Drapik <patryk.drapik@bitbag.pl>
  */
-//@TODO: not extend image
-class BlockVideo extends BaseImage implements ImageInterface
+class BlockVideo extends Video implements VideoInterface
 {
 }

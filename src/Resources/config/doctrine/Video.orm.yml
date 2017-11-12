@@ -1,0 +1,15 @@
+BitBag\CmsPlugin\Entity\Video:
+    type: entity
+    table: bitbag_video
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            nullable: true
+        path:
+            type: text

@@ -84,14 +84,14 @@ interface BlockInterface extends
     public function setImage(?ImageInterface $image): void;
 
     /**
-     * @return null|ImageInterface
+     * @return null|VideoInterface
      */
-    public function getVideo(): ?ImageInterface;
+    public function getVideo(): ?VideoInterface;
 
     /**
-     * @param null|ImageInterface $video
+     * @param null|VideoInterface $video
      */
-    public function setVideo(?ImageInterface $video): void;
+    public function setVideo(?VideoInterface $video): void;
 
     /**
      * @return null|string

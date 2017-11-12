@@ -15,7 +15,7 @@ services:
     bitbag.event_listener.video_block_upload:
         class: BitBag\CmsPlugin\EventListener\VideoBlockUploadListener
         arguments:
-            - "@sylius.image_uploader"
+            - "@bit_bag.cms_plugin.uploader.video_uploader"
         tags:
             - { name: kernel.event_listener, event: bitbag.block.pre_create, method: uploadVideo }
             - { name: kernel.event_listener, event: bitbag.block.pre_update, method: uploadVideo }

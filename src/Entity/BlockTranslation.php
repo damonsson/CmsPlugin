@@ -41,7 +41,7 @@ class BlockTranslation extends AbstractTranslation implements BlockTranslationIn
     protected $image;
 
     /**
-     * @var null|ImageInterface
+     * @var null|VideoInterface
      */
     protected $video;
 
@@ -111,7 +111,7 @@ class BlockTranslation extends AbstractTranslation implements BlockTranslationIn
     /**
      * @inheritDoc
      */
-    public function getVideo(): ?ImageInterface
+    public function getVideo(): ?VideoInterface
     {
         return $this->video;
     }
@@ -119,7 +119,7 @@ class BlockTranslation extends AbstractTranslation implements BlockTranslationIn
     /**
      * @inheritDoc
      */
-    public function setVideo(?ImageInterface $video): void
+    public function setVideo(?VideoInterface $video): void
     {
         $video->setOwner($this);
 

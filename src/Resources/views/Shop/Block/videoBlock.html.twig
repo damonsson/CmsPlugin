@@ -1,31 +1,27 @@
-{#@TODO: How to add dir video in web/media permamently? Just create dir?#}
+{% set path = '/media/image/'~block.video.path %}
 
-{{ dump(block.video) }}
-
-{#{% set path = '/media/'~block.video.path %}#}
-
-{#{% if null == block.name and null == block.link %}#}
-    {#<video width="400" controls>#}
-        {#<source src="{{ path }}" type="video/mp4">#}
-    {#</video>#}
-{#{% elseif null == block.name and null != block.link %}#}
-    {#<a href="{{ block.link }}">#}
-        {#<video width="400" controls>#}
-            {#<source src="{{ path }}" type="video/mp4">#}
-        {#</video>#}
-    {#</a>#}
-{#{% elseif null != block.name and null == block.link %}#}
-    {#<h4>#}
-        {#{{ block.name }}#}
-    {#</h4>#}
-    {#<video width="400" controls>#}
-        {#<source src="{{ path }}" type="video/mp4">#}
-    {#</video>#}
-{#{% else %}#}
-    {#<h4>{{ block.name }}</h4>#}
-    {#<a href="{{ block.link }}">#}
-        {#<video width="400" controls>#}
-            {#<source src="{{ path }}" type="video/mp4">#}
-        {#</video>#}
-    {#</a>#}
-{#{% endif %}#}
+{% if null == block.name and null == block.link %}
+    <video width="400" controls>
+        <source src="{{ path }}" type="video/mp4">
+    </video>
+{% elseif null == block.name and null != block.link %}
+    <a href="{{ block.link }}">
+        <video width="400" controls>
+            <source src="{{ path }}" type="video/mp4">
+        </video>
+    </a>
+{% elseif null != block.name and null == block.link %}
+    <h4>
+        {{ block.name }}
+    </h4>
+    <video width="400" controls>
+        <source src="{{ path }}" type="video/mp4">
+    </video>
+{% else %}
+    <h4>{{ block.name }}</h4>
+    <a href="{{ block.link }}">
+        <video width="400" controls>
+            <source src="{{ path }}" type="video/mp4">
+        </video>
+    </a>
+{% endif %}
