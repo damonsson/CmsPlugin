@@ -35,6 +35,16 @@ Feature: Adding blocks
         And I add it
         Then I should be notified that the block has been created
 
+    @ui
+    Scenario: Adding video block
+        When I go to the create "video" block page
+        And I fill the code with "fat_rabbit"
+        And I fill the name with "Fat rabbit video"
+        And I fill the link with "/page/fat-rabbit"
+        And I upload the "fat_rabbit.mp4" video
+        And I add it
+        Then I should be notified that the block has been created
+
     @ui @javascript
     Scenario: Adding block with sections
         Given there are existing sections named "Blog" and "Homepage"

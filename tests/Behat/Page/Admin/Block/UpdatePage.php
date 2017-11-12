@@ -43,6 +43,20 @@ final class UpdatePage extends BaseUpdatePage implements UpdatePageInterface
     }
 
     /**
+     * @inheritDoc
+     */
+    public function uploadVideo(string $video): void
+    {
+        $path = __DIR__ . '/../../../Resources/videos' . $video;
+
+        Assert::fileExists($path);
+
+        $this->getDocument()
+            ->attachFileToField('Choose file', $path);
+        ;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function fillName(string $name): void

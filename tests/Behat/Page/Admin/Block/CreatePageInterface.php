@@ -37,6 +37,11 @@ interface CreatePageInterface extends BaseCreatePageInterface, ContainsErrorInte
     public function uploadImage(string $image): void;
 
     /**
+     * @param string $video
+     */
+    public function uploadVideo(string $video): void;
+
+    /**
      * @param string $name
      */
     public function fillName(string $name): void;

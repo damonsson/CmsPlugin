@@ -205,6 +205,14 @@ final class BlockContext implements Context
     }
 
     /**
+     * @When I upload the :video video
+     */
+    public function iUploadTheVideo(string $video): void
+    {
+        $this->resolveCurrentPage()->uploadVideo($video);
+    }
+
+    /**
      * @When I disable it
      */
     public function iDisableIt(): void

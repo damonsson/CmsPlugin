@@ -31,6 +31,11 @@ interface UpdatePageInterface extends BaseUpdatePageInterface
     public function uploadImage(string $image): void;
 
     /**
+     * @param string $video
+     */
+    public function uploadVideo(string $video): void;
+
+    /**
      * @param string $name
      */
     public function fillName(string $name): void;
