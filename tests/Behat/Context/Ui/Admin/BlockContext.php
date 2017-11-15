@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace Tests\BitBag\CmsPlugin\Behat\Context\Ui\Admin;
 
 use Behat\Behat\Context\Context;
+use Behat\Behat\Tester\Exception\PendingException;
 use BitBag\CmsPlugin\Entity\BlockInterface;
 use BitBag\CmsPlugin\Exception\TemplateTypeNotFound;
 use BitBag\CmsPlugin\Repository\BlockRepositoryInterface;
@@ -387,5 +388,117 @@ final class BlockContext implements Context
             $this->createPage,
             $this->updatePage,
         ]);
+    }
+
+    /**
+     * @When /^I browse blocks$/
+     */
+    public function iBrowseBlocks()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^I filter blocks containing "([^"]*)"$/
+     */
+    public function iFilterBlocksContaining($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then /^I should see (\d+) block in the list$/
+     */
+    public function iShouldSeeBlockInTheList($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^I should see an block with "([^"]*)" code$/
+     */
+    public function iShouldSeeAnBlockWithCode($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^I should not see an block with "([^"]*)" code$/
+     */
+    public function iShouldNotSeeAnBlockWithCode($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^I am browsing blocks$/
+     */
+    public function iAmBrowsingBlocks()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When /^I start sorting blocks by code$/
+     */
+    public function iStartSortingBlocksByCode()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then /^I should see (\d+) blocks in the list$/
+     */
+    public function iShouldSeeBlocksInTheList($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^the first block on the list should have code "([^"]*)"$/
+     */
+    public function theFirstBlockOnTheListShouldHaveCode($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^I switch the way blocks are sorted by code$/
+     */
+    public function iSwitchTheWayBlocksAreSortedByCode()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When /^I start sorting blocks by name$/
+     */
+    public function iStartSortingBlocksByName()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^the first block on the list should have type "([^"]*)"$/
+     */
+    public function theFirstBlockOnTheListShouldHaveType($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^the blocks are already sorted by type$/
+     */
+    public function theBlocksAreAlreadySortedByType()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When /^I switch the way blocks are sorted by type$/
+     */
+    public function iSwitchTheWayBlocksAreSortedByType()
+    {
+        throw new PendingException();
     }
 }

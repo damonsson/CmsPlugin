@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace Tests\BitBag\CmsPlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
+use Behat\Behat\Tester\Exception\PendingException;
 use BitBag\CmsPlugin\Entity\BlockImage;
 use BitBag\CmsPlugin\Entity\BlockInterface;
 use BitBag\CmsPlugin\Factory\BlockFactoryInterface;
@@ -198,5 +199,14 @@ final class BlockContext implements Context
     {
         $this->blockRepository->add($block);
         $this->sharedStorage->set('block', $block);
+    }
+
+    /**
+     * @Given /^this block has an "([^"]*)" type$/
+     * @Given /^this block has a "([^"]*)" type$/
+     */
+    public function thisBlockHasAType($arg1)
+    {
+        throw new PendingException();
     }
 }
